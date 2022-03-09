@@ -1,4 +1,5 @@
 from passlib.apps import custom_app_context as pwd_context
+
 from new_app import db, app
 from config import POSTGRE_URI
 
@@ -35,13 +36,16 @@ class Advertisement(db.Model):
 
     __idx1 = db.Index('advertisement_title', 'title', unique=True)
 
+    @property
+    def __date_serialize(self):
+        return f'{self.create_date.strftime("%d.%m.%Y %H:%M")}'
 
     def to_dict(self):
         return {
             'id': self.id,
             'title': self.title,
             'description': self.description,
-            'create_date': self.create_date,
+            'create_date': self.__date_serialize,
             'owner': self.owner
         }
 
