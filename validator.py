@@ -10,3 +10,4 @@ class AdvertisementModelValidator(pydantic.BaseModel):
     user_name: str
     password: str
     title: str
+    description: str = None
