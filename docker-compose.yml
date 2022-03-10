@@ -4,9 +4,21 @@ services:
   db:
     image: postgres
     restart: always
+    volumes:
+      - ./ .database/postgres/data:/var/lib/postgresql/data
     environment:
       POSTGRES_USER: aiohttp
       POSTGRES_PASSWORD: 12345678
       POSTGRES_DB: aiohttp_app
     ports:
-      - 5430:5432
+      - 5432
+  web:
+    build: ./web_server
+    restart: always
+    volumes:
+      - ./web_server:/web
+    ports:
+      - 8080:8080
+    depends_on:
+      - db
+
