@@ -21,21 +21,21 @@ print(response)
 # print(f'get_user: {get_user.json()}')
 
 # create advertisement
-create_advertisement = requests.post(f'{URL}adv_new',
-                                     json={
-                                         'title': 'thing_6',
-                                         'description': 'ttu',
-                                         'user_name': 'user_2',
-                                         'password': '12333Sdf545sdf',
-                                     })
-print('____create_advertisement____')
-print(create_advertisement)
-print(create_advertisement.json())
-
-get_advertisement_all = requests.get(f'{URL}adv')
-print('\n____get_advertisement_all____')
-print(get_advertisement_all)
-print(get_advertisement_all.json())
+# create_advertisement = requests.post(f'{URL}adv_new',
+#                                      json={
+#                                          'title': 'thing_6',
+#                                          'description': 'ttu',
+#                                          'user_name': 'user_2',
+#                                          'password': '12333Sdf545sdf',
+#                                      })
+# print('____create_advertisement____')
+# print(create_advertisement)
+# print(create_advertisement.json())
+#
+# get_advertisement_all = requests.get(f'{URL}adv')
+# print('\n____get_advertisement_all____')
+# print(get_advertisement_all)
+# print(get_advertisement_all.json())
 
 #
 # get_advertisement_1 = requests.get(f'{URL}adv/1')
